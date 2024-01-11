@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="birthday-container">
+    <h1>🎉 Happy Birthday, Your Friend! 🎉</h1>
+    <p>Click on the surprise boxes to reveal the birthday treats!</p>
+
+    <div class="surprise-box" onclick="revealMessage(this)">🎁 Surprise Box 1</div>
+    <div class="surprise-box" onclick="revealMessage(this)">🎁 Surprise Box 2</div>
+    <div class="surprise-box" onclick="revealMessage(this)">🎁 Surprise Box 3</div>
+    <div class="surprise-box" onclick="revealMessage(this)">🎁 Surprise Box 4</div>
+
+    <div id="confetti"></div>
+  </div>
+
+  <script>
+    function revealMessage(box) {
+      box.innerHTML = getSurpriseContent();
+      box.style.backgroundColor = getRandomColor();
+      addConfetti();
+    }
+
+    function getSurpriseContent() {
+      const messages = [
+        "Wishing you a fantastic day filled with joy and laughter!",
+        "May all your dreams come true on this special day!",
+        "Cheers to another year of wonderful memories!",
+        "Sending you lots of love and happiness on your birthday!",
+        "May your day be as special as you are! Happy Birthday!"
+      ];
+
+      return messages[Math.floor(Math.random() * messages.length)];
+    }
+
+    function addConfetti() {
+      const confettiContainer = document.getElementById('confetti');
+
+      for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.backgroundColor = getRandomColor();
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.animationDuration = `${Math.random() * 2 + 1}s`;
+        confettiContainer.appendChild(confetti);
+      }
+    }
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+</body>
+</html>

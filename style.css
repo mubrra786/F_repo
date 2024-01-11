@@ -1,0 +1,42 @@
+
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+
+    #birthday-container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .surprise-box {
+      cursor: pointer;
+      display: inline-block;
+      padding: 20px;
+      margin: 10px;
+      background-color: #87CEEB;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .surprise-box:hover {
+      transform: scale(1.1);
+    }
+
+    #confetti {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  
